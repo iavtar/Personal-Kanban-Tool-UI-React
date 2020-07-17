@@ -1,8 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
 
+import  ErrorPage  from './components/Error/ErrorPage';
 import Dashboard from './components/Dashboard';
 import Header from './components/Layout/Header';
 
@@ -15,14 +16,15 @@ import UpadteProject from './components/Project/UpadteProject';
 function App() {
   return (
     <Provider store={store}>
-      <Router>
+      <Switch>
         <div className="App">
           <Header />
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/addProject" component={AddProject} />
           <Route exact path="/updateProject/:id" component={UpadteProject} />
+          <Route exact path="/error" component={ErrorPage} />
         </div>
-      </Router>
+      </Switch>
     </Provider>
   );
 }
