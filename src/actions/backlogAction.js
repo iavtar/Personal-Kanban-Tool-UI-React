@@ -15,4 +15,16 @@ export const addProjectTask = (backlog_id, project_task, history) => async dispa
             payload: err.response.data
         });
     }
+};
+
+export const getBacklog = backlog_id => async dispatch => {
+    try {
+        const res = await axios.get(`/api/backlog/${backlog_id}`);
+        dispatch({
+            type: GET_BACKLOG,
+            payload: res.data
+        });
+    } catch (err) {
+        
+    }
 }
