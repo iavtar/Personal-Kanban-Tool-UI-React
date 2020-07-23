@@ -13,6 +13,7 @@ import AddProject from './components/Project/AddProject';
 import UpadteProject from './components/Project/UpadteProject';
 import ProjectBoard from './components/ProjectBoard/ProjectBoard';
 import AddProjectTask from './components/ProjectBoard/ProjectTasks/AddProjectTask';
+import UpdateProjectTask from './components/ProjectBoard/ProjectTasks/UpdateProjectTask';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route exact path="/updateProject/:id" component = { UpadteProject } />
           <Route exact path="/projectBoard/:id" component = { ProjectBoard } />
           <Route exact path="/addProjectTask/:id" component = { AddProjectTask } />
+          <Route exact path="/updateProjectTask/:backlog_id/:pt_id" component = { UpdateProjectTask } />
           <Route exact path="/error" component = { ErrorPage } />
       </Provider>
     </Switch>
